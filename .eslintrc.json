@@ -1,0 +1,25 @@
+{
+	"root": true,
+	"extends": [
+	  "eslint:recommended",
+	  "plugin:import/errors",
+	  "plugin:import/warnings"
+	],
+	"parserOptions": {
+	  "ecmaVersion": 7,
+	  "sourceType": "module"
+	},
+	"env": {
+	  "browser": true,
+	  "node": true,
+	  "mocha": true
+	},
+	"rules-key": {
+		"0": "0 Means Off",
+		"1": "1 Means Warning",
+		"2": "2 Means Error"
+	},
+	"rules": {
+		"no-console": 1
+	}
+  }
