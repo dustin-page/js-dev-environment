@@ -1,11 +1,27 @@
 import 'whatwg-fetch'; //imports a fetch polyfill until more browsers can support it
+import getBaseUrl from './baseUrl';
+
+const baseUrl = getBaseUrl();
 
 export function getUsers() {
 	return get('users');
 }
 
+export function deleteUser (id) {
+	return del(`users/${id}`);
+}
+
 function get (url) {
-	return fetch(url).then(onSuccess, onError);
+	return fetch(baseUrl + url).then(onSuccess, onError);
+}
+
+function del (url) {
+	const request = new Request(baseUrl + url, {
+		method: 'DELETE'
+	});
+
+	console.log(`request: ${request}`); // eslint-disable-line no-console
+	return fetch(request).then(onSuccess, onError);
 }
 
 function onSuccess (response) {
