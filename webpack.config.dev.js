@@ -1,6 +1,7 @@
 /* Since Babel is setup to transpile JS code we can use ES6 features */
 
 import path from 'path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
   debug: true,
@@ -15,7 +16,14 @@ export default {
     publicPath: '/',
     filename: 'bundle.js' //Note: Webpack won't actually generate any physical files for our development build. It will serve our build from memory! The "bundle.js" file will be created in memory and served to the browser. Need to define path and name in order to simulate the files existence.
   },
-  plugins: [], //Optionally add plugins like hot reloading, catching errors, linting styles, etc.
+  plugins: [
+		//Create HTML file that includes reference to bundled JS.
+		new HtmlWebpackPlugin({
+			template: 'src/index.html',
+			inject: true //tells webpack to inject any necessary script tags for me
+		})
+
+	], //Optionally add plugins like hot reloading, catching errors, linting styles, etc.
   module: { //Define the file types we want Webpack to handle
     loaders: [
       {test: /\.js$/, exclude: /node_modules/, loaders: ['babel']},

@@ -20,7 +20,6 @@ function del (url) {
 		method: 'DELETE'
 	});
 
-	console.log(`request: ${request}`); // eslint-disable-line no-console
 	return fetch(request).then(onSuccess, onError);
 }
 
