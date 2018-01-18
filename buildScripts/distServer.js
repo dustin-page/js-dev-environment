@@ -19,6 +19,7 @@ app.get('/', function (req, res) {
 	res.sendFile(path.join(__dirname, '../dist/index.html'));
 });
 
+/* Removed this section because we are now hitting production API on Heroku instead of localhost
 app.get('/users', function(req, res) {
 	// Hard coding for simplicity. Pretend this hits a real database
 	res.json([
@@ -27,6 +28,7 @@ app.get('/users', function(req, res) {
 		{"id": 3, "firstName": "Dustin", "lastName": "Page", "email":"dustin@test.com"}
 	]);
 });
+*/
 
 app.listen(port, function (err) {
 	if (err) {

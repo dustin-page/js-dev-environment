@@ -16,7 +16,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
 	<!-- Out of the box HtmlWebpackPlugin supports EJS templating. Here we conditionally add Track.js when the environment is production -->
-	<% if (htmlWebpackPlugin.options.trackJSToken){ %>
+	<% if (htmlWebpackPlugin.options.trackJSToken) { %>
 		<!-- BEGIN TRACKJS -->
 		<script type="text/javascript">window._trackJs = { token: '<%=htmlWebpackPlugin.options.trackJSToken%>' };</script>
 		<script type="text/javascript" src="https://cdn.trackjs.com/releases/current/tracker.js"></script>
