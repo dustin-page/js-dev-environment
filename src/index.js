@@ -2,6 +2,8 @@ import './index.css';
 
 import {getUsers, deleteUser} from './api/userApi';
 
+//trackJs.track('ahoy trackjs!'); //Test Track.js tracking
+
 getUsers().then( result => {
 
 	let usersBody = "";
