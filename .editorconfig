@@ -1,8 +1,7 @@
-# EditorConfig is awesome: http://EditorConfig.org
+# EditorConfig ensures code consistency
+# URL: http://EditorConfig.org
 
 ## Check if your IDE has native support or requires a plugin to format files based on the .editorconfig file: http://editorconfig.org/#download
-
-# EditorConfig ensures code consistency
 
 # top-most EditorConfig file
 root = true
